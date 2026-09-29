@@ -42,7 +42,7 @@ from jobpilot.discovery.role_expander import RoleExpander
 from jobpilot.documents.docx_renderer import DocxRenderer
 from jobpilot.documents.pdf_renderer import PDFRenderer
 from jobpilot.immigration.routes import RouteManager
-from jobpilot.matching.feedback import FeedbackCalibrator
+from jobpilot.matching.feedback import FeedbackLoop
 from jobpilot.profiles.google_drive_connector import GoogleDriveConnector
 from jobpilot.profiles.loader import ProfileLoader
 from jobpilot.tracker.audit_trail import AuditTrail
@@ -66,7 +66,7 @@ def get_services():
     status_mgr = StatusManager(repo)
     audit_trail = AuditTrail(repo)
     follow_up_mgr = FollowUpManager(repo)
-    feedback_calibrator = FeedbackCalibrator()
+    feedback_calibrator = FeedbackLoop()
     role_expander = RoleExpander()
     pdf_renderer = PDFRenderer()
     docx_renderer = DocxRenderer()
@@ -484,26 +484,112 @@ elif selected_page == "9. Application Tracker":
             st.write("No audit events logged yet.")
 
 
+
 # ----------------- PAGE 10: SETTINGS & HEALTH -----------------
 elif selected_page == "10. System Settings & Health":
-    render_header("System Settings & Local AI Diagnostics", "Environment, local models, and safe data directory management.")
+    render_header("System Settings & Local AI Diagnostics", "Environment, Ollama health, credential vault, and portal setup.")
 
-    c1, c2 = st.columns(2)
-    with c1:
-        st.subheader("Local LLM (Ollama) Status")
-        st.write("- **Host:** `http://localhost:11434`")
-        st.write("- **Target Model:** `llama3.1:8b`")
-        st.write("- **Embedding Model:** `nomic-embed-text`")
-        st.info("Heuristic and rule-based fallbacks are active if Ollama is not running.")
+    tab_llm, tab_creds, tab_data = st.tabs(["🤖 AI Engine (Ollama)", "🔐 Job Portal Credentials", "📂 Data Directory"])
 
-    with c2:
-        st.subheader("Data Directory (OneDrive Sync Isolation)")
+    with tab_llm:
+        st.subheader("Local Ollama AI Engine")
+        col_o1, col_o2 = st.columns([2, 1])
+        with col_o1:
+            st.write("JobPilot AI uses **local Ollama models** — runs on your PC, free, private, no API keys needed.")
+            st.markdown("""
+**Setup Steps (one-time):**
+1. Download Ollama from [ollama.com/download](https://ollama.com/download) and install it
+2. Open a new PowerShell and run:
+```powershell
+ollama pull llama3.1:8b       # ~4.7GB — main reasoning (job match, cover letter, answers)
+ollama pull nomic-embed-text  # ~274MB — job similarity embeddings
+```
+3. Ollama runs in background automatically after install
+""")
+        with col_o2:
+            st.info("**Target Host:** `http://localhost:11434`\n\n**LLM:** `llama3.1:8b`\n\n**Embeddings:** `nomic-embed-text`")
+
+        if st.button("🔄 Check Ollama Health", type="primary"):
+            import httpx
+            try:
+                resp = httpx.get("http://localhost:11434/api/tags", timeout=3.0)
+                if resp.status_code == 200:
+                    models = [m["name"] for m in resp.json().get("models", [])]
+                    st.success(f"✅ **Ollama is running!** Models installed: `{'`, `'.join(models) if models else 'none yet'}`")
+                    if "llama3.1:8b" not in " ".join(models):
+                        st.warning("⚠️ `llama3.1:8b` not found. Run: `ollama pull llama3.1:8b`")
+                    if "nomic-embed-text" not in " ".join(models):
+                        st.warning("⚠️ `nomic-embed-text` not found. Run: `ollama pull nomic-embed-text`")
+                else:
+                    st.error(f"Ollama returned status {resp.status_code}")
+            except Exception:
+                st.error("❌ **Ollama is not running** or not installed. Follow the setup steps on the left.")
+
+    with tab_creds:
+        st.subheader("🔐 Job Portal Credential Vault")
+        st.caption("Passwords are stored securely in Windows Credential Manager. Never saved in files or the database.")
+
+        vault = services["vault"]
+
+        PORTALS = [
+            {"name": "LinkedIn",        "url": "linkedin.com",    "note": "For Easy Apply & company redirect"},
+            {"name": "Naukri",          "url": "naukri.com",      "note": "India's largest job board"},
+            {"name": "Internshala",     "url": "internshala.com", "note": "Internships & fresher roles"},
+            {"name": "Indeed",          "url": "indeed.com",      "note": "Global job aggregator"},
+            {"name": "Instahyre",       "url": "instahyre.com",   "note": "Premium India tech hiring"},
+            {"name": "Wellfound",       "url": "wellfound.com",   "note": "Startup jobs globally"},
+            {"name": "Glassdoor",       "url": "glassdoor.com",   "note": "Company reviews + jobs"},
+            {"name": "Company Portals", "url": "ats_generic",     "note": "Greenhouse / Workday / Lever (session saved per company)"},
+        ]
+
+        for portal in PORTALS:
+            with st.expander(f"**{portal['name']}** — `{portal['url']}` _{portal['note']}_"):
+                col_e, col_p, col_btn = st.columns([2, 2, 1])
+                with col_e:
+                    email_in = st.text_input("Email / Username", key=f"email_{portal['url']}", placeholder="your@email.com")
+                with col_p:
+                    pass_in = st.text_input("Password", type="password", key=f"pass_{portal['url']}", placeholder="••••••••")
+                with col_btn:
+                    st.write("")  # spacing
+                    if st.button("Save Securely", key=f"save_{portal['url']}"):
+                        if email_in and pass_in:
+                            vault.store_password(portal["url"], email_in, pass_in)
+                            st.success(f"✅ **{portal['name']}** credentials saved to Windows Credential Manager!")
+                        else:
+                            st.warning("Enter both email and password first.")
+
+                # Show if credentials already saved
+                try:
+                    # Check if any password exists by trying common usernames in session state
+                    saved_user = st.session_state.get(f"saved_user_{portal['url']}", "")
+                    if email_in and vault.has_password(portal["url"], email_in):
+                        st.success(f"✅ Password already stored for: `{email_in}`")
+                    else:
+                        st.info("No credentials stored yet — enter details above and click 'Save Securely'.")
+                except Exception:
+                    st.info("No credentials stored yet for this portal.")
+
+        st.divider()
+        st.subheader("📧 Job Application Email (for follow-up & OTP detection)")
+        st.caption("Use a dedicated Gmail for job applications — keeps your personal inbox clean.")
+        st.code("""
+# Add to your .env file:
+JOB_EMAIL_ADDRESS=your.job.email@gmail.com
+JOB_EMAIL_IMAP_SERVER=imap.gmail.com
+# Then store the Gmail App Password in keyring (NOT in .env):
+# python -c "import keyring; keyring.set_password('JobPilotAI:gmail', 'your.job.email@gmail.com', 'app-password')"
+        """, language="bash")
+
+    with tab_data:
+        st.subheader("Data Directory")
         data_dir = get_data_dir()
-        st.write(f"- **Data Path:** `{data_dir}`")
-        st.write(f"- **Database File:** `{data_dir / 'jobpilot.db'}`")
-        st.write(f"- **Resumes Folder:** `{data_dir / 'resumes'}`")
-        st.write(f"- **Sessions Folder:** `{data_dir / 'sessions'}`")
+        st.info(f"All JobPilot AI data lives **outside OneDrive** so it never accidentally syncs to the cloud:\n\n**`{data_dir}`**")
+        st.write(f"- **Database:** `{data_dir / 'jobpilot.db'}`")
+        st.write(f"- **Generated Resumes:** `{data_dir / 'resumes'}`")
+        st.write(f"- **Cover Letters:** `{data_dir / 'cover_letters'}`")
+        st.write(f"- **Browser Sessions:** `{data_dir / 'sessions'}`")
 
-    if st.button("Export Audit Log & Database Snapshot"):
-        audit_file = services["audit_trail"].export_audit_log()
-        st.success(f"Audit log exported successfully to `{audit_file}`")
+        if st.button("Export Audit Log & Database Snapshot"):
+            audit_file = services["audit_trail"].export_audit_log()
+            st.success(f"Audit log exported to `{audit_file}`")
+

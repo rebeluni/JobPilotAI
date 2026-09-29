@@ -68,3 +68,6 @@ class FeedbackLoop:
         self.repo.upsert_job({"job_id": job_id, "user_feedback": feedback})
 
         return new_weights
+
+
+FeedbackCalibrator = FeedbackLoop
