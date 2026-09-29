@@ -1,0 +1,84 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage[margin=0.5in,top=0.35in,bottom=0.3in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{microtype}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{0.95}
+\definecolor{accent}{HTML}{1F3A5F}
+\titleformat{\section}{\bfseries\large\color{accent}}{}{0em}{\MakeUppercase}[\vspace{-3.5pt}\hrule\vspace{0pt}]
+\titlespacing*{\section}{0pt}{4pt}{1.5pt}
+\setlist[itemize]{leftmargin=1.1em,itemsep=0.6pt,parsep=0pt,topsep=1pt,partopsep=0pt}
+\newcommand{\role}[4]{\textbf{#1} \hfill \textbf{#2}\\ \textit{#3} \hfill \textit{#4}\vspace{1pt}}
+
+\begin{document}
+\begin{center}
+{\LARGE \bfseries \color{accent} Ankita Yadav}\\[2pt]
+{\small \textbf{AI/ML Engineer \textbar{} Product \& Data Analyst \textbar{} Data Quality, Anomaly Detection \& Automation}}\\[2pt]
+{\small 9082461978 \textbar{} \href{mailto:rebank2125@gmail.com}{rebank2125@gmail.com} \textbar{} Mumbai, India \textbar{} \href{https://linkedin.com}{LinkedIn} \textbar{} \href{https://github.com}{GitHub}}
+\end{center}
+
+\section{Summary}
+{\small Data-driven AI/ML Engineer and Product Analyst with hands-on experience in data analysis, data quality, and validating AI/ML-generated data (LLMs, RAG, AI agents) across fintech, retail, and logistics. Skilled in SQL, Python, anomaly and outlier detection, defining metrics, and building Tableau/Power BI dashboards and reports that communicate data source quality, trends, and risks. Experienced in root cause analysis, validation rules and checks, and collaborating with data scientists, engineers, and stakeholders to refine AI outputs in remote, fast-paced environments.}
+
+\section{Technical Skills}
+{\small
+\textbf{Data Analysis \& Data Quality:} Data Analysis, Data Quality, Data Source Quality Evaluation, Data Validation \& Reconciliation, Validation Rules \& Checks, Data Governance, Data Harmonisation \& Prioritisation, Metrics Definition, Reporting, Trend \& Outlier Analysis, Anomaly Detection, Root Cause Analysis, Hypothesis Testing, A/B Testing, Web Scraping, Manual Coding, Taxonomy Recognition\\
+\textbf{Data Visualization \& Analytics:} SQL, Tableau, Power BI, Dashboards \& Reports, Pandas, Python, Data Warehousing, ETL/ELT, Data Pipelines, Kafka, Spark\\
+\textbf{Generative AI / ML:} OpenAI, Anthropic (Claude), LangChain, CrewAI, Hugging Face, TensorFlow, PyTorch, scikit-learn, RAG, LLMs, AI Agents, Multi-Agent Systems, Embeddings, Retrieval, Prompt Engineering, NLP, Pattern Recognition, Neural Networks, Model Evaluation, AI/ML-Generated Data\\
+\textbf{Cloud \& DevOps:} AWS, EC2, ELB, S3, DynamoDB, Docker, Kubernetes, CI/CD, Workflow Automation, Power Automate, Make.com, PowerApps\\
+\textbf{Software Engineering:} Python, Java, JavaScript, TypeScript, Node.js, REST APIs, Git, GitHub, System Design, Object-Oriented Programming, HTML/CSS, Agile/Scrum, Debugging \& Testing\\
+\textbf{Core Competencies:} Stakeholder Engagement, Cross-Functional Collaboration, Solution Architecture, Business Analysis, Project Management, Remote Collaboration, Attention to Detail, Analytical Thinking, Communication}
+
+\section{Experience}
+\role{Formula2GX Digital}{May 2025 -- Apr 2026}{AI Engineer}{}
+\begin{itemize}\small
+\item Delivered Generative AI solutions using LLMs, RAG, and prompt engineering (LangChain, CrewAI, OpenAI) alongside ML models and cloud data pipelines for enterprise clients including WESCO and Crown Commercial Service, collaborating with the CEO and leadership on requirements and solution design.
+\item Built and maintained cloud data pipelines and containerized workflows using AWS (EC2, ELB, S3, DynamoDB), Docker, and Kubernetes alongside Python ETL and Make.com/PowerApps/Power Automate integrations, applying SQL-based data validation and reconciliation checks to monitor data quality.
+\item Built and evaluated RAG-based retrieval and LLM agent workflows; evaluated AI-generated outputs, performed root cause analysis of anomalies and inconsistencies, and iterated with data scientists and engineers to improve reliability and confidence in AI outputs.
+\item Used Git/GitHub for version control and built Tableau dashboards and reports for KPI tracking, communicating data quality trends, issues, and proposed actions to stakeholders.
+\end{itemize}
+\role{Apps AIT}{Jul 2024 -- Sep 2024}{Market Analyst Intern}{}
+\begin{itemize}\small
+\item Analysed market trends using Python, SQL, and Tableau dashboards for clients; identified patterns and outliers and developed segmentation strategies increasing campaign ROI by 15\% through data-driven, hypothesis-tested process improvements.
+\end{itemize}
+\role{VIT}{Oct 2024 -- Dec 2024}{Computer Vision Research Intern}{}
+\begin{itemize}\small
+\item Processed satellite imagery with OpenCV; applied pattern recognition and clustering algorithms achieving 89\% accuracy in tree segmentation, with statistical evaluation of model quality and analysis of model outputs and errors.
+\end{itemize}
+
+\section{Projects}
+\textbf{Multi-Agent AI Orchestration System} \textbar{} \textit{Python, LangChain, CrewAI, OpenAI, RAG, Slack API, Git/GitHub}
+\begin{itemize}\small
+\item Built an autonomous, event-driven LLM agent pipeline for market research using RAG-based retrieval and ReAct reasoning loops; reduced AI hallucinations by 40\% through output validation and quality checks, and integrated Slack webhooks for real-time workflow automation.
+\end{itemize}
+\textbf{AI Research Paper Evaluation Platform} \textbar{} \textit{React, Firebase, Python, SQL, Node.js, Role-Based Access}
+\begin{itemize}\small
+\item Developed a React frontend and Node.js/Python backend for a role-based data platform with SQL storage, automated scoring, and NLP-driven plagiarism detection, reducing evaluation time by 60\%; maintained issue logs via Git/GitHub.
+\end{itemize}
+
+\section{Education}
+\textbf{Thakur College of Engineering and Technology, Mumbai} \hfill \textbf{Jun 2026}\\
+{\small B.Tech in Artificial Intelligence \& Data Science --- CGPA: 8.94 / 10.0\\
+\textit{Relevant Coursework:} Taxonomy Recognition, Machine Learning, Data Science, Statistics, Data Analysis, Neural Networks}
+
+\section{Leadership \& Extracurricular}
+\textbf{Society for Data Science} \textbar{} Treasurer \hfill 2023 -- 2025
+\begin{itemize}\small
+\item Managed club finances and coordinated data science workshops and hackathons for 100+ members, applying project management and stakeholder communication skills.
+\end{itemize}
+\textbf{Shastra Coding Club} \textbar{} Research Team Member \hfill 2023 -- 2024
+\begin{itemize}\small
+\item Contributed to research initiatives and technical problem-solving; collaborated with cross-functional teams on coding challenges and process improvement projects.
+\end{itemize}
+
+\section{Certifications}
+{\small Data Science with Python --- NPTEL (IIT Certification) \textbar{} Machine Learning --- freeCodeCamp}
+\end{document}

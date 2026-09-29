@@ -1,0 +1,201 @@
+# Canonical Source of Truth for Ankita Yadav
+# Populated directly from verified Master Resume (Google Drive)
+# Path configured in config/settings.yaml (user.profile_path)
+# NEVER invent or guess details. If unknown, leave as NEEDS_USER_INPUT.
+
+personal:
+  full_name: "Ankita Yadav"
+  title: "AI/ML Engineer | Data & Automation | Software Engineering"
+  email: "rebank2125@gmail.com"
+  phone: "9082461978"
+  location_city: "Mumbai"
+  location_state: "Maharashtra"
+  location_country: "India"
+  linkedin_url: NEEDS_USER_INPUT
+  github_url: NEEDS_USER_INPUT
+  portfolio_url: NEEDS_USER_INPUT
+
+work_authorization:
+  india: true
+  other_countries: false
+  requires_sponsorship_india: false
+  requires_sponsorship_international: true
+  visa_status_note: "Indian citizen. Authorized to work in India without sponsorship. International roles require per-job immigration evaluation per country-specific rules."
+
+education:
+  - degree: "Bachelor of Technology (B.Tech)"
+    field: "Artificial Intelligence & Data Science"
+    institution: "Thakur College of Engineering and Technology, Mumbai"
+    graduation_year: 2026
+    gpa: "8.94 / 10.0"
+
+experience:
+  total_years_professional: 1.5
+  total_years_approximate: true
+
+employment_history:
+  - employer: "Formula2GX Digital"
+    title: "AI Engineer"
+    start_date: "2025-05"
+    end_date: "2026-04"
+    responsibilities: "Delivered Generative AI solutions using LLMs, RAG, and prompt engineering (LangChain, CrewAI, OpenAI) alongside ML models and cloud data pipelines for enterprise clients including WESCO and Crown Commercial Service."
+    achievements: "Built and evaluated RAG-based retrieval and LLM agent workflows, performing root cause analysis; built Tableau dashboards for KPI tracking."
+    skills_demonstrated: ["Python", "LLMs", "RAG", "CrewAI", "LangChain", "OpenAI", "AWS", "Docker", "Kubernetes", "Make.com", "PowerApps", "Power Automate"]
+
+  - employer: "Apps AIT"
+    title: "Market Analyst Intern"
+    start_date: "2024-07"
+    end_date: "2024-09"
+    responsibilities: "Analysed market trends using Python and Tableau for clients."
+    achievements: "Developed segmentation strategies increasing campaign ROI by 15% through data-driven, hypothesis-tested process improvements."
+    skills_demonstrated: ["Python", "Tableau", "Data Analytics", "Hypothesis Testing"]
+
+  - employer: "VIT"
+    title: "Computer Vision Research Intern"
+    start_date: "2024-10"
+    end_date: "2024-12"
+    responsibilities: "Processed satellite imagery with OpenCV and applied pattern recognition."
+    achievements: "Achieved 89% accuracy in tree segmentation with statistical evaluation of model performance."
+    skills_demonstrated: ["Python", "OpenCV", "Machine Learning", "Pattern Recognition"]
+
+skills:
+  programming:
+    - "Python"
+    - "Java"
+    - "JavaScript"
+    - "TypeScript"
+    - "Node.js"
+    - "SQL"
+  ai_ml:
+    - "Generative AI"
+    - "LLMs"
+    - "RAG"
+    - "AI Agents"
+    - "Multi-Agent Systems"
+    - "LangChain"
+    - "CrewAI"
+    - "OpenAI"
+    - "Anthropic (Claude)"
+    - "Hugging Face"
+    - "PyTorch"
+    - "TensorFlow"
+    - "scikit-learn"
+    - "Prompt Engineering"
+    - "NLP"
+  cloud_devops:
+    - "AWS"
+    - "EC2"
+    - "S3"
+    - "DynamoDB"
+    - "Docker"
+    - "Kubernetes"
+    - "CI/CD"
+    - "Kafka"
+    - "Spark"
+    - "Git"
+    - "GitHub"
+  platforms_tools:
+    - "Make.com"
+    - "Power Automate"
+    - "PowerApps"
+    - "Tableau"
+    - "Power BI"
+  data:
+    - "Data Pipelines"
+    - "ETL/ELT"
+    - "Data Warehousing"
+    - "Data Analytics"
+    - "Pandas"
+  integrations:
+    - "REST APIs"
+    - "Webhooks"
+    - "Slack API"
+    - "CRM Integrations"
+
+preferences:
+  notice_period_days: NEEDS_USER_INPUT
+  salary_expectation_inr: NEEDS_USER_INPUT
+  salary_expectation_usd: NEEDS_USER_INPUT
+  willing_to_relocate: NEEDS_USER_INPUT
+  preferred_remote: NEEDS_USER_INPUT
+  target_role_families:
+    - "AI_ENGINEER"
+    - "AI_AUTOMATION"
+    - "AI_SOLUTIONS_ENGINEER"
+    - "AI_INTEGRATION_ENGINEER"
+    - "PRODUCT_SYSTEMS"
+    - "CRM_AUTOMATION"
+    - "DATA_ANALYTICS"
+    - "SOLUTIONS_ENGINEER"
+  target_countries:
+    - "India"
+    - "Germany"
+    - "Netherlands"
+    - "UK"
+    - "Canada"
+    - "Australia"
+    - "Singapore"
+    - "UAE"
+  avoid_roles:
+    - "Pure DevOps"
+    - "Linux/SysAdmin"
+    - "Infrastructure-heavy"
+    - "Java/Spring-heavy"
+    - "DSA-heavy Software Engineering"
+
+master_resume:
+  summary: "AI/Software Engineer with hands-on experience building Generative AI applications (LLMs, RAG, AI agents), machine learning models, cloud data pipelines, and automation workflows for enterprise clients across fintech, retail, and logistics. Skilled in LLM orchestration (LangChain, CrewAI, RAG), Python/Java/JavaScript software development, REST APIs, Git/GitHub version control, AWS cloud services, and workflow automation, with strong stakeholder engagement in fast-paced, remote-collaborative environments."
+  employment:
+    - employer: "Formula2GX Digital"
+      title: "AI Engineer"
+      bullets:
+        - text: "Delivered Generative AI solutions using LLMs, RAG, and prompt engineering (LangChain, CrewAI, OpenAI) alongside ML models and cloud data pipelines for enterprise clients including WESCO and Crown Commercial Service, collaborating with CEO and leadership on requirements and solution design."
+          skills_demonstrated: ["Python", "LLMs", "RAG", "CrewAI", "LangChain", "OpenAI"]
+          impact_level: "HIGH"
+        - text: "Built and maintained cloud data pipelines and containerized workflows using AWS (EC2, ELB, S3, DynamoDB), Docker, and Kubernetes alongside Python ETL and Make.com/PowerApps/Power Automate integrations."
+          skills_demonstrated: ["AWS", "Docker", "Kubernetes", "Make.com", "PowerApps", "Power Automate"]
+          impact_level: "HIGH"
+        - text: "Built and evaluated RAG-based retrieval and LLM agent workflows, performing root cause analysis and iterating to improve reliability; used Git/GitHub for version control and built Tableau dashboards for KPI tracking."
+          skills_demonstrated: ["RAG", "AI Agents", "Git", "GitHub", "Tableau"]
+          impact_level: "HIGH"
+
+    - employer: "Apps AIT"
+      title: "Market Analyst Intern"
+      bullets:
+        - text: "Analysed market trends using Python and Tableau for clients; developed segmentation strategies increasing campaign ROI by 15% through data-driven, hypothesis-tested process improvements."
+          skills_demonstrated: ["Python", "Tableau", "Data Analytics"]
+          impact_level: "HIGH"
+
+    - employer: "VIT"
+      title: "Computer Vision Research Intern"
+      bullets:
+        - text: "Processed satellite imagery with OpenCV; applied pattern recognition and clustering algorithms achieving 89% accuracy in tree segmentation, with statistical evaluation of model performance."
+          skills_demonstrated: ["OpenCV", "Pattern Recognition", "Machine Learning"]
+          impact_level: "HIGH"
+
+  projects:
+    - name: "Multi-Agent AI Orchestration System"
+      bullets:
+        - text: "Built an autonomous, event-driven LLM agent pipeline for market research using RAG-based retrieval and ReAct reasoning loops; reduced AI hallucinations by 40% and integrated Slack webhooks for real-time workflow automation."
+          skills_demonstrated: ["Python", "LangChain", "CrewAI", "OpenAI", "RAG", "Slack API", "Git", "GitHub"]
+          impact_level: "HIGH"
+
+    - name: "AI Research Paper Evaluation Platform"
+      bullets:
+        - text: "Developed a React frontend and Node.js/Python backend for a role-based data platform with automated scoring and NLP-driven plagiarism detection, reducing evaluation time by 60%; maintained issue logs via Git/GitHub."
+          skills_demonstrated: ["React", "Firebase", "Python", "SQL", "Node.js"]
+          impact_level: "HIGH"
+
+certifications:
+  - "Data Science with Python - NPTEL (IIT Certification)"
+  - "Machine Learning - freeCodeCamp"
+
+leadership_extracurricular:
+  - role: "Treasurer"
+    organization: "Society for Data Science"
+    period: "2023 - 2025"
+    details: "Managed club finances and coordinated data science workshops and hackathons for 100+ members, applying project management and stakeholder communication skills."
+  - role: "Research Team Member"
+    organization: "Shastra Coding Club"
+    period: "2023 - 2024"
+    details: "Contributed to research initiatives and technical problem-solving; collaborated with cross-functional teams on coding challenges and process improvement projects."

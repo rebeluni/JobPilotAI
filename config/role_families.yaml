@@ -1,0 +1,49 @@
+role_families:
+  AI_ENGINEER:
+    display_name: "AI Engineer"
+    keywords: ["AI Engineer", "Artificial Intelligence Engineer", "GenAI Engineer", "Generative AI", "LLM Engineer", "RAG", "Agentic AI"]
+    description: "Building and deploying generative AI, LLM applications, retrieval-augmented generation pipelines, and agent systems."
+
+  AI_AUTOMATION:
+    display_name: "AI Automation Developer"
+    keywords: ["AI Automation", "Workflow Automation", "Make.com", "Power Automate", "Zapier", "Process Automation", "n8n"]
+    description: "Designing end-to-end intelligent automation workflows combining AI models with business tooling and APIs."
+
+  AI_SOLUTIONS_ENGINEER:
+    display_name: "AI Solutions Engineer"
+    keywords: ["AI Solutions Engineer", "AI Solutions Architect", "Applied AI Specialist", "Technical AI Consultant"]
+    description: "Translating customer requirements into functional AI architectures and proof-of-concept integrations."
+
+  AI_INTEGRATION_ENGINEER:
+    display_name: "AI Integration Engineer"
+    keywords: ["AI Integration", "API Integration", "Model Deployment", "Webhook Automation", "Middleware AI"]
+    description: "Connecting disparate platforms with foundation models via REST APIs, webhooks, and ETL pipelines."
+
+  PRODUCT_SYSTEMS:
+    display_name: "Product Systems / Operations Engineer"
+    keywords: ["Product Systems", "Business Systems Engineer", "Operations Automation", "Internal Tools Developer"]
+    description: "Building internal tools, integrations, and workflow pipelines powering product operations."
+
+  CRM_AUTOMATION:
+    display_name: "CRM Automation Specialist"
+    keywords: ["CRM Automation", "HubSpot Automation", "Salesforce Automation", "CRM Integration", "Customer Operations"]
+    description: "Automating data flow and lifecycle triggers between CRM platforms, databases, and AI tooling."
+
+  DATA_ANALYTICS:
+    display_name: "Data Analytics & BI Engineer"
+    keywords: ["Data Analyst", "Analytics Engineer", "Power BI", "Tableau", "SQL Analyst", "Data Pipeline"]
+    description: "Designing dashboards, analyzing business data, and developing actionable intelligence with modern BI tools."
+
+  SOLUTIONS_ENGINEER:
+    display_name: "Solutions Engineer"
+    keywords: ["Solutions Engineer", "Technical Solutions", "Pre-Sales Engineer", "Technical Account Engineer"]
+    description: "Bridging business goals and technical implementations through architecture demos and custom integrations."
+
+avoid_roles:
+  - "Pure DevOps"
+  - "Linux/SysAdmin"
+  - "Infrastructure-heavy"
+  - "Java/Spring-heavy"
+  - "DSA-heavy Software Engineering"
+  - "Embedded Systems / Firmware"
+  - "Hardware Engineering"

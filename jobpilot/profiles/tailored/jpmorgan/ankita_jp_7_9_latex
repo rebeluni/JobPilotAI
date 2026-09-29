@@ -1,0 +1,192 @@
+%-------------------------
+% Resume in LaTeX
+% Compile with pdfLaTeX on Overleaf
+%------------------------
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.9in}
+\addtolength{\textheight}{1.9in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-7pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+% Ensure PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-6pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=1pt, topsep=1pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in, itemsep=0pt, parsep=0pt, topsep=1pt, partopsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Ankita Yadav} \\ \vspace{3pt}
+    \small B.Tech Artificial Intelligence \& Data Science \\ \vspace{2pt}
+    \small 9082461978 $|$ \href{mailto:rebank2125@gmail.com}{rebank2125@gmail.com} $|$ Mumbai, India $|$
+    \href{https://www.linkedin.com/in/ankita-yadav-913923203}{LinkedIn} $|$ \href{https://github.com/rebeluni}{GitHub}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\small{Data \& Technology professional with hands-on experience across Generative AI/ML delivery, cloud data pipelines, and data quality \& reporting governance for enterprise clients in fintech, retail, and logistics. Skilled in SQL/Python-based data validation, reconciliation, and trend/outlier analysis, dashboarding (Tableau, Power BI), stakeholder workshops, Agile delivery, and program governance (status, risks/issues/dependencies, UAT).}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Generative AI / ML}{: OpenAI, Anthropic (Claude), LangChain, CrewAI, Hugging Face, TensorFlow, PyTorch, scikit-learn, RAG, NLP, Machine Learning, Pattern Recognition, Neural Networks} \\
+     \textbf{Data Analysis \& Quality}{: SQL, Python, Data Validation \& Reconciliation, Trend \& Outlier Analysis, Hypothesis Testing, A/B Testing, Model Evaluation, Anomaly Detection, Post-Implementation Review} \\
+     \textbf{Cloud \& Data Engineering}{: Azure Data Factory, Azure Synapse, Databricks, Kafka, Spark, ETL/ELT, Data Warehousing, Data Lineage} \\
+     \textbf{BI, Reporting \& Automation}{: Tableau, Power BI, Pandas, Power Automate, Make.com, PowerApps} \\
+     \textbf{Project \& Risk Governance}{: Agile/Scrum, Jira, Stakeholder Engagement \& Workshops, Requirements Gathering, Program Governance, RCSA/Control Awareness, UAT Coordination, Vendor/POC Evaluation} \\
+     \textbf{Software Engineering}{: Python, Java, JavaScript, TypeScript, Node.js, REST APIs, Git/GitHub, System Design, HTML/CSS}
+    }}
+\end{itemize}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+    {Formula2GX Digital}{May 2025 -- Apr 2026}
+    {AI Engineer}{}
+    \resumeItemListStart
+        \resumeItem{Delivered Generative AI, ML, and data engineering PoCs across fintech, retail, and logistics; partnered with CEO and stakeholders on requirements gathering, solution design, and program governance.}
+        \resumeItem{Built cloud data pipelines (Azure Data Factory, Synapse, Databricks) and Python ETL/reconciliation workflows, validating data quality and feeding automation (Make.com, PowerApps, Power Automate).}
+        \resumeItem{Drove root cause analysis and issue resolution, tracked risks/issues/dependencies, and built Tableau dashboards for KPI/trend monitoring; supported UAT and change management in a remote, Agile-driven setting.}
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Apps AIT}{Jul 2024 -- Sep 2024}
+    {Market Analyst Intern}{}
+    \resumeItemListStart
+        \resumeItem{Analysed market trends using Python, SQL, and Tableau; performed reconciliations and trend/outlier analysis, developing hypothesis-tested segmentation that increased campaign ROI by 15\%.}
+    \resumeItemListEnd
+
+\resumeSubheading
+    {VIT}{Oct 2024 -- Dec 2024}
+    {Computer Vision Research Intern}{}
+    \resumeItemListStart
+        \resumeItem{Processed satellite imagery with OpenCV; applied pattern recognition and clustering algorithms achieving 89\% accuracy in tree segmentation, with statistical evaluation and validation of model performance.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+    {\textbf{Multi-Agent AI Orchestration System} $|$ \emph{Python, LangChain, CrewAI, OpenAI, Slack API}}{}
+    \resumeItemListStart
+        \resumeItem{Built autonomous, event-driven LLM agent pipeline for market research using ReAct reasoning loops; reduced AI hallucinations by 40\% and integrated Slack webhooks for real-time monitoring and workflow automation.}
+    \resumeItemListEnd
+
+\resumeProjectHeading
+    {\textbf{AI Research Paper Evaluation Platform} $|$ \emph{Firebase, Python, SQL, Node.js, Role-Based Access}}{}
+    \resumeItemListStart
+        \resumeItem{Developed role-based data platform with automated scoring, NLP-driven plagiarism detection, and audit-style logging; reduced evaluation time by 60\% while maintaining process documentation for continuous improvement.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Thakur College of Engineering and Technology, Mumbai}{Expected Jun 2026}
+    {B.Tech in Artificial Intelligence \& Data Science --- CGPA: 8.94 / 10.0}{}
+\resumeSubHeadingListEnd
+
+%-----------LEADERSHIP & EXTRACURRICULAR-----------
+\section{Leadership \& Extracurricular}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+    {Society for Data Science}{2023 -- 2025}
+    {Treasurer}{}
+    \resumeItemListStart
+        \resumeItem{Managed club finances and coordinated data science workshops, hackathons, and knowledge-sharing sessions for 100+ members; applied stakeholder communication and program coordination skills in a leadership capacity.}
+    \resumeItemListEnd
+
+\resumeSubheading
+    {Shastra Coding Club}{2023 -- 2024}
+    {Research Team Member}{}
+    \resumeItemListStart
+        \resumeItem{Contributed to research initiatives and technical problem-solving; collaborated with cross-functional teams on coding challenges and process improvement projects.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     Data Science with Python --- NPTEL (IIT Certification) \\
+     Machine Learning --- freeCodeCamp
+    }}
+\end{itemize}
+
+\end{document}

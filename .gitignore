@@ -1,0 +1,40 @@
+# Environments and Secrets
+.env
+venv/
+.venv/
+env/
+
+# Data Directory (stores SQLite DB, credentials, cookies, tokens)
+data/
+*.db
+*.sqlite
+*.sqlite3
+sessions/
+
+# Generated Documents & Audit Files
+data/resumes/
+data/cover_letters/
+data/audit/
+data/cache/
+data/exports/
+
+# Cache & Local State
+config/role_expansions_cache.yaml
+
+# Python cache & testing
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Playwright artifacts
+test-results/
+playwright-report/
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

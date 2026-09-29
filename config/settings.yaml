@@ -1,0 +1,89 @@
+app:
+  name: "JobPilot AI"
+  version: "0.2.0"
+  data_dir: "C:/Users/Ankita/Desktop/JobPilotData"  # OUTSIDE OneDrive
+  log_level: "INFO"
+
+user:
+  profile_path: "jobpilot/profiles/ankita_profile.yaml"   # Configurable — not hardcoded
+
+modules:
+  discovery: on
+  extraction: on
+  matching: on
+  immigration: on
+  resume_optimizer: off        # Toggle per session; default off until stable
+  cover_letter: on
+  browser_automation: on
+  accounts_sessions: on
+  feedback_loop: on
+  networking: off              # Off by default
+  interview_prep: off          # Off by default
+  job_quality_checks: on
+
+searxng:
+  base_url: "http://localhost:8080"
+  engines: [google, bing, duckduckgo]
+  max_results_per_query: 20
+  request_delay_seconds: 2
+  timeout_seconds: 30
+
+discovery:
+  target_countries: [India, Germany, Netherlands, UK, Canada, Australia, Singapore, UAE]
+  target_role_families: [AI_ENGINEER, AI_AUTOMATION, AI_SOLUTIONS_ENGINEER, PRODUCT_SYSTEMS, CRM_AUTOMATION, DATA_ANALYTICS, SOLUTIONS_ENGINEER]
+  remote_preference: ANY
+  max_jobs_per_run: 200
+  deduplicate: true
+  rate_limit_requests_per_minute: 20     # Polite rate limiting
+
+llm:
+  default_provider: ollama
+  embedding_provider: ollama
+  ollama:
+    base_url: "http://localhost:11434"
+    model: "llama3.1:8b"
+    embedding_model: "nomic-embed-text"
+  gemini:
+    model: NEEDS_CONFIG     # Set only if user opts in with API key
+  anthropic:
+    model: NEEDS_CONFIG
+  openai:
+    model: NEEDS_CONFIG
+  task_routing:
+    bulk_ranking: ollama_embeddings
+    shortlist_reranking: ollama
+    classification: ollama
+    extraction: ollama
+    cover_letter: ollama
+    answer_generation: ollama
+    immigration_analysis: ollama
+    role_expansion: ollama
+    resume_optimizer: ollama
+
+matching:
+  weights:
+    role_relevance: 0.25
+    technical_skill: 0.25
+    experience: 0.20
+    location_remote: 0.10
+    immigration: 0.10
+    seniority: 0.05
+    education: 0.05
+  min_match_score_shortlist: 0.55
+  experience_gap_penalty: 0.15         # Per excess year (soft penalty, not hard filter)
+  embedding_top_n: 30                  # LLM reranks only these top N from embedding stage
+
+browser:
+  headless: false
+  slow_mo_ms: 100
+  screenshot_on_review: true
+  default_browser: chromium
+  rate_limit_actions_per_minute: 30
+
+resume_optimizer:
+  default_mode: "off"                  # off / suggest / auto
+  session_override: true               # Allow per-session toggle in dashboard
+
+dashboard:
+  port: 8501
+  theme: dark

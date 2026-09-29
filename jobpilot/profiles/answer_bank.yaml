@@ -1,0 +1,31 @@
+# Answer Bank for Job Application Form Fields
+# CRITICAL: All years_of_experience entries are NEEDS_USER_INPUT until verified by candidate.
+# The system will never guess or pre-fill unverified experience duration.
+
+work_authorization:
+  india_answer: "Yes, I am authorized to work in India without any sponsorship."
+  international_answer: "NEEDS_USER_INPUT_PER_JOB"
+
+years_of_experience:
+  python: NEEDS_USER_INPUT
+  javascript: NEEDS_USER_INPUT
+  typescript: NEEDS_USER_INPUT
+  sql: NEEDS_USER_INPUT
+  ai_ml: NEEDS_USER_INPUT
+  llm: NEEDS_USER_INPUT
+  rag: NEEDS_USER_INPUT
+  api: NEEDS_USER_INPUT
+  automation: NEEDS_USER_INPUT
+  crm: NEEDS_USER_INPUT
+  make_com: NEEDS_USER_INPUT
+  power_automate: NEEDS_USER_INPUT
+  tableau: NEEDS_USER_INPUT
+  power_bi: NEEDS_USER_INPUT
+  aws: NEEDS_USER_INPUT
+
+highest_education: "Bachelor of Technology (B.Tech) in Artificial Intelligence & Data Science"
+notice_period: NEEDS_USER_INPUT
+salary_expectation_inr: NEEDS_USER_INPUT
+salary_expectation_usd: NEEDS_USER_INPUT
+willing_to_relocate: NEEDS_USER_INPUT
+preferred_work_mode: NEEDS_USER_INPUT

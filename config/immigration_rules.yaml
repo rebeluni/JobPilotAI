@@ -1,0 +1,76 @@
+# Immigration Rules and Thresholds
+# IMPORTANT: All foreign thresholds require manual verification by the user against official government sources.
+# Until verified: true is set, confidence will be capped at LOW.
+
+countries:
+  India:
+    route: "Citizen / Domestic Authorization"
+    requires_sponsorship: false
+    min_salary_inr: 0
+    source_url: "Domestic"
+    source_date: "2026-01-01"
+    verified: true
+    notes: "Authorized to work in India without sponsorship."
+
+  UK:
+    route: "Skilled Worker Visa"
+    requires_sponsorship: true
+    min_salary_gbp: NEEDS_VERIFICATION   # Check current general threshold vs going rate for SOC code
+    source_url: "https://www.gov.uk/skilled-worker-visa/your-job"
+    source_date: "NEEDS_VERIFICATION"
+    verified: false
+    notes: "Requires licensed sponsor, valid CoS, and salary meeting minimum threshold."
+
+  Germany:
+    route: "EU Blue Card (§ 18g AufenthG) / Opportunity Card"
+    requires_sponsorship: true
+    min_salary_eur: NEEDS_VERIFICATION   # Check shortage occupations (STEM/IT) vs standard threshold
+    source_url: "https://www.make-it-in-germany.com/en/visa/kinds-of-visa/eu-blue-card"
+    source_date: "NEEDS_VERIFICATION"
+    verified: false
+    notes: "Requires recognized university degree and employment contract with eligible salary."
+
+  Netherlands:
+    route: "Highly Skilled Migrant (Kennismigrant)"
+    requires_sponsorship: true
+    min_salary_eur: NEEDS_VERIFICATION   # Check IND monthly gross criteria (under 30 vs 30+)
+    source_url: "https://ind.nl/en/work/working_in_the_Netherlands/Pages/Highly-skilled-migrant.aspx"
+    source_date: "NEEDS_VERIFICATION"
+    verified: false
+    notes: "Employer must be recognized sponsor registered with IND."
+
+  Canada:
+    route: "Global Skills Strategy (GSS) / Express Entry LMIA"
+    requires_sponsorship: true
+    min_salary_cad: NEEDS_VERIFICATION
+    source_url: "https://www.canada.ca/en/immigration-refugees-citizenship/services/work-canada.html"
+    source_date: "NEEDS_VERIFICATION"
+    verified: false
+    notes: "Global Talent Stream allows expedited 2-week processing for qualifying tech roles."
+
+  Australia:
+    route: "Skills in Demand Visa (Subclass 482 / TSS replacement)"
+    requires_sponsorship: true
+    min_salary_aud: NEEDS_VERIFICATION   # TSMIT threshold
+    source_url: "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-skill-shortage-482"
+    source_date: "NEEDS_VERIFICATION"
+    verified: false
+    notes: "Requires approved employer sponsor and nomination on eligible skilled occupation list."
+
+  Singapore:
+    route: "Employment Pass (EP) / COMPASS Points"
+    requires_sponsorship: true
+    min_salary_sgd: NEEDS_VERIFICATION   # Check MOM EP minimum qualifying salary for age group
+    source_url: "https://www.mom.gov.sg/passes-and-permits/employment-pass"
+    source_date: "NEEDS_VERIFICATION"
+    verified: false
+    notes: "Subject to COMPASS framework scoring."
+
+  UAE:
+    route: "Green Visa / Standard Employment Visa"
+    requires_sponsorship: true
+    min_salary_aed: NEEDS_VERIFICATION
+    source_url: "https://u.ae/en/information-and-services/visa-and-emirates-id/residence-visas/residence-visa-for-working-in-the-uae"
+    source_date: "NEEDS_VERIFICATION"
+    verified: false
+    notes: "Standard employer sponsorship or self-sponsored 5-year Green Visa for skilled professionals."
