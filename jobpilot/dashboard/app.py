@@ -525,6 +525,31 @@ ollama pull nomic-embed-text  # ~274MB — job similarity embeddings
             except Exception:
                 st.error("❌ **Ollama is not running** or not installed. Follow the setup steps on the left.")
 
+        st.divider()
+        st.subheader("⚡ Cloud AI Models & API Keys (Optional / Faster)")
+        st.caption("If you prefer using cloud models (like NVIDIA Nemotron 70B, Google Gemini, or OpenAI GPT-4o), enter your API keys below.")
+
+        import os
+        from dotenv import load_dotenv, set_key
+        load_dotenv(override=True)
+
+        col_k1, col_k2 = st.columns(2)
+        with col_k1:
+            nv_key = st.text_input("🟢 NVIDIA NIM API Key", value=os.getenv("NVIDIA_API_KEY", ""), type="password", placeholder="nvapi-...", help="Get free 1,000 credits at build.nvidia.com")
+            gemini_key = st.text_input("🔵 Google Gemini API Key", value=os.getenv("GEMINI_API_KEY", ""), type="password", placeholder="AIzaSy...", help="Free key at aistudio.google.com")
+        with col_k2:
+            openai_key = st.text_input("🟣 OpenAI API Key", value=os.getenv("OPENAI_API_KEY", ""), type="password", placeholder="sk-...", help="From platform.openai.com")
+            anthropic_key = st.text_input("🟠 Anthropic Claude API Key", value=os.getenv("ANTHROPIC_API_KEY", ""), type="password", placeholder="sk-ant-...", help="From console.anthropic.com")
+
+        if st.button("💾 Save API Keys to .env"):
+            env_file = os.path.abspath(".env")
+            set_key(env_file, "NVIDIA_API_KEY", nv_key)
+            set_key(env_file, "GEMINI_API_KEY", gemini_key)
+            set_key(env_file, "OPENAI_API_KEY", openai_key)
+            set_key(env_file, "ANTHROPIC_API_KEY", anthropic_key)
+            st.success("✅ API Keys successfully saved to `.env`!")
+
+
     with tab_creds:
         st.subheader("🔐 Job Portal Credential Vault")
         st.caption("Passwords are stored securely in Windows Credential Manager. Never saved in files or the database.")
